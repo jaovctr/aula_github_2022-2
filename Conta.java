@@ -1,19 +1,20 @@
 public class Conta {
-    private String numeroConta;
+    private int numeroConta;
     private Cliente cliente;
     private double saldo;
+    private String ext = "";
 
-    public Conta(String numeroConta,Cliente cliente, double saldo){
+    public Conta(int numeroConta,Cliente cliente, double saldo){
         this.numeroConta = numeroConta;
         this.cliente = cliente;
         this.saldo = saldo;
     }
 
-    public String getNumeroConta() {
+    public int getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(String numeroConta) {
+    public void setNumeroConta(int numeroConta) {
         this.numeroConta = numeroConta;
     }
 
@@ -34,7 +35,25 @@ public class Conta {
     }
 
     public String toString(){
-        return "Cliente: "+ cliente.getCliente()+
+        return "Cliente: "+ cliente.getNome()+
                 "\n Conta: "+ numeroConta+"\n Saldo: "+saldo;
     }
+
+    public void credito(double valor) {
+		saldo += valor;
+		ext+="Crédito: "+valor+"."+"Saldo: "+saldo+"\n";
+	}
+	
+	public void debito(double valor) {
+		if(saldo<valor) {
+			System.out.println("Saldo insuficiente para debitar!");
+		}else {
+			saldo -= valor;
+			ext+="Débito: "+valor+"."+"Saldo: "+saldo+"\n";
+		}	
+	}
+	
+	public String getExtrato() {
+		return ext;
+	}
 }

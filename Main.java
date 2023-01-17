@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ public class Main {
 		Menu mainMenu =  new Menu("Menu Conta", Arrays.asList("Depositar", "Sacar", "Saldo", "Sair"));
 		int op;
 		
+		
 		do {
 			op = mainMenu.getSelection();
 			
@@ -33,11 +35,13 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
+
 		ArrayList<Cliente> clientes = new ArrayList();
+
 		
 		Menu mainMenu =  new Menu("Menu Principal",
 				Arrays.asList(
-						"Cadastrar Cliente",
+						"Cadastrar Cliente", 
 						"Cadastrar Conta",
 						"Conta",
 						"Sair"
@@ -54,7 +58,7 @@ public class Main {
 					String cpf = ler_terminal("CPF: ");
 					clientes.add(new Cliente(++id, nome, cpf));
 					break;
-				case 2:
+				case 2: 
 					break;
 				case 3:
 					menuConta();
