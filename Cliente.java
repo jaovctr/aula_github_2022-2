@@ -8,6 +8,13 @@ public class Cliente {
         this.nome = nome;
         this.cpf = cpf;
     }
+ 
+    public String getCliente(){
+        return "id: "+id+"\nNome: "+nome+"\nCPF: "+cpf;
+    }
+    
+    public void setCliente(int id, String nome, String cpf){
+
 
     public int getId() {
         return id;
