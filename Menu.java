@@ -1,26 +1,24 @@
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-	private String title;
+	private String tiltle;
 	private List<String> options;
 
 	public Menu(List<String> options) {
-		this.title = "Menu";
+		this.tiltle = "Menu";
 		this.options = options;
 	}
 
-	public Menu(String title, List<String> options) {
-		this.title = title;
+	public Menu(String tiltle, List<String> options) {
+		this.tiltle = tiltle;
 		this.options = options;
 	}
 
 	public int getSelection() {
 		int op = 0;
 		while (op==0){
-			System.out.println(title+"\n");
+			System.out.println(tiltle+"\n");
 			int i=1;
 			for (String option : options) {
 				System.out.println(i++ + " - " + option);
@@ -39,8 +37,10 @@ public class Menu {
 				System.out.println("Opcao errada!");
 				op=0;
 			}
-
+			
+			s.close();
 		}
+		
 		return op;
 	}
 }
