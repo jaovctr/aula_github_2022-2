@@ -1,21 +1,14 @@
 import java.util.Scanner;
 
 public class Banco {
-    private final int MAX=100;
-	private Conta[] contas = new Conta[MAX]; //como é só para teste, coloquei uma quantidade qualquer.
+    private  int MAXIMO=50;
+	private Conta[] contas = new Conta[MAXIMO];
 	private int pos_conta_atual=0;
 	Scanner input = new Scanner(System.in);
 	
-	
-  /*    public Cliente cadastrarCliente(int id, String nome, String cpf){
-
-        Cliente cliente  = new Cliente(id, nome, cpf);
-
-        return cliente;
-    }*/
 
 	public void incluir(Conta c){
-		if(pos_conta_atual<MAX) {
+		if(pos_conta_atual<MAXIMO) {
 			
 	
 			System.out.println("Digite o número da conta:");
@@ -25,7 +18,7 @@ public class Banco {
 			if(pos_conta_atual==0 || pesquisarConta(c.getNumeroConta()) == -9999) {
 
 				System.out.println("Digite o cpf do titular:");
-			//	String cpf = input.nextLine();
+	
                 System.out.println("Digite o saldo inicial:");
                 double saldoInicial = input.nextDouble();
 				Conta conta = new Conta (num, c.getCliente(), saldoInicial);
@@ -98,13 +91,5 @@ public class Banco {
 		}
 	}
 	
-	/*public void listarContas() {
-		if(pos_conta_atual!=0) {
-			for(int i=0; i<pos_conta_atual; i++) {
-				System.out.println(""+(i+1)+"° conta cadastrada:"+"\nTitular: "+contas[i].cliente.getNome()+"\nCPF: "+contas[i].cliente.getCpf()+"\nNúmero: "+contas[i].getNum());
-			}
-		}else {
-			System.out.println("Não há nenhuma conta cadastrada.");
-		}
-	}*/
+	
 }
