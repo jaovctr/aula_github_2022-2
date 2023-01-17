@@ -9,6 +9,7 @@ public class Main {
 		System.out.println(texto);
 		Scanner s = new Scanner(System.in);
 		String str = s.nextLine();
+		s.close();
 
 		return str;
 	}
